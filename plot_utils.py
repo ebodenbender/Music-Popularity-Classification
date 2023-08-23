@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 import utils
 
-def make_bar_chart(x, y, title, x_label, y_label, bar_labels=[], rotation=0):
+def make_bar_chart(x, y, title, x_label, y_label, ticks=None, bar_labels=[], rotation=0, figsize=None):
     """Plots a bar chart given values for the x and y axes.
     
     Args:
@@ -19,14 +19,23 @@ def make_bar_chart(x, y, title, x_label, y_label, bar_labels=[], rotation=0):
         title (str): bar chart title
         x_label (str): x axis label
         y_label (str): y axis label
+        ticks (list of int): spacing between xticks
+        bar_labels (list of int, double, or str): xtick labels
+        rotation (int): rotation (degrees) of xtick labels
+        figsize (tuple): figure width, height (in inches)
     """
-    plt.figure()
+    if figsize != None:
+        plt.figure(figsize=figsize)
+    else:
+        plt.figure()
     plt.bar(x,y)
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
+    if ticks is None:
+        ticks = x
     if bar_labels != []:
-        plt.xticks(x, bar_labels, rotation=rotation)
+        plt.xticks(ticks, bar_labels, rotation=rotation)
     plt.show()
 
 def make_pie_chart(x, y, title):
