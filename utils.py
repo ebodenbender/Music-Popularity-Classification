@@ -15,3 +15,17 @@ def compute_slope_intercept(x, y):
     # y = mx + b -> b = y - mx
     b = meany - m * meanx
     return m, b
+
+def get_frequencies(col):
+    col.sort() # inplace
+    # parallel lists
+    values = []
+    counts = []
+    for value in col:
+        if value in values: # seen it before
+            counts[-1] += 1 # okay because sorted
+        else: # haven't seen it before
+            values.append(value)
+            counts.append(1)
+    
+    return values, counts
