@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 import utils
 
-def make_bar_chart(x, y, title, x_label, y_label, ticks=None, bar_labels=[], rotation=0, figsize=None):
+def make_bar_chart(x, y, title, x_label, y_label, ticks=None, bar_labels=[], rotation=0, figsize=None, color=None,):
     """Plots a bar chart given values for the x and y axes.
     
     Args:
@@ -23,12 +23,13 @@ def make_bar_chart(x, y, title, x_label, y_label, ticks=None, bar_labels=[], rot
         bar_labels (list of int, double, or str): xtick labels
         rotation (int): rotation (degrees) of xtick labels
         figsize (tuple): figure width, height (in inches)
+        color (list of str): colors for each bar
     """
     if figsize != None:
         plt.figure(figsize=figsize)
     else:
         plt.figure()
-    plt.bar(x,y)
+    plt.bar(x, y, color=color)
     plt.title(title)
     plt.xlabel(x_label)
     plt.ylabel(y_label)
