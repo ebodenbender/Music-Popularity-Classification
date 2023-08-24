@@ -1,8 +1,5 @@
 """
-Programmer: Emily Bodenbender
-Class: CPSC 322-02, Spring 2022
-Programming Assignment #3
-2/22/22
+Programmed by Emily Bodenbender
 
 Description: Helper functions for data visualization with matplotlib.
 """
